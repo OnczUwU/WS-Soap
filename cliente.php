@@ -16,13 +16,15 @@ try{
         }
     }else{
         $respuestas = $client->obtenerDepartamentos();
+        var_dump($respuestas);
     }
 
     $arreglo = array();
 
     foreach($respuestas as $respuesta){
         $arreglo[]['departamento'] = array(
-            "id"=> $respuesta["departamento"]
+            "id"=> $respuesta["id"],
+            "nombre" => $respuesta["departamento"]
         );
     }
     $arr_headers = getallheaders();
